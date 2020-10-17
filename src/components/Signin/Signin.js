@@ -22,7 +22,7 @@ class Signin extends React.Component {
   };
 
   onSubmitSignIn = () => {
-    fetch("http://localhost:3000/signin", {
+    fetch("https://murmuring-refuge-85127.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -34,7 +34,7 @@ class Signin extends React.Component {
       .then((data) => {
         if (data.userID && data.success === "true") {
           this.saveAuthToke(data.token);
-          fetch(`http://localhost:3000/profile/${data.userID}`, {
+          fetch(`https://murmuring-refuge-85127.herokuapp.com/profile/${data.userID}`, {
             method: "get",
             headers: {
               "Content-Type": "application/json",
